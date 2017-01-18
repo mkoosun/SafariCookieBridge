@@ -15,7 +15,7 @@
 - (void) start {
     
     SFSafariViewController *safari = [[SFSafariViewController alloc]initWithURL:[NSURL URLWithString:self.requestUrl]];
-    safari.delegate = self;
+    //safari.delegate = self;
     safari.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     safari.view.alpha = 0.1f;
     safari.view.userInteractionEnabled = NO;
@@ -79,7 +79,11 @@
             self.block = nil;
         }
         [self destory];
+        
+        return YES;
     }
+    
+    return NO;
 }
 
 @end

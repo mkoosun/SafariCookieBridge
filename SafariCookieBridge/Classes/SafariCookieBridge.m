@@ -57,7 +57,7 @@
     [bridge.tasks addObject:task];
     
     task.url = url;
-    task.queneId = [NSString stringWithFormat:@"%d", bridge.taskCount ++];
+    task.queneId = [NSString stringWithFormat:@"%ld", bridge.taskCount ++];
     task.scheme = scheme;
     task.name = name;
     if(timeout>0)
@@ -90,7 +90,7 @@
     [bridge.tasks addObject:task];
     
     task.url = url;
-    task.queneId = [NSString stringWithFormat:@"%d", bridge.taskCount ++];
+    task.queneId = [NSString stringWithFormat:@"%ld", bridge.taskCount ++];
     task.scheme = scheme;
     task.name = name;
     if(timeout>0)
