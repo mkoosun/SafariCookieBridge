@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SafariCookieBridge'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Get and Set data via Safari Cookie'
 
   s.description      = <<-DESC
