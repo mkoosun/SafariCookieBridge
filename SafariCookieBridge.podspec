@@ -1,11 +1,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SafariCookieBridge'
-  s.version          = '0.1.0'
-  s.summary          = 'Get and Set data via Safari's Cookie'
+  s.version          = '1.0.0'
+  s.summary          = 'Get and Set data via Safari Cookie'
 
   s.description      = <<-DESC
-SafariCookieBridge can Get data from Safari's Cookie, and also Set data to Cookie. Very convenient to transfer data between App and Web, even if App is not installed. You can fetch cookie data after user install your App, and let user continue to do something that he want do in Web Page.
+SafariCookieBridge can get data from Safari's Cookie, and also set data to Cookie. Very convenient to transfer data between App and Web, even if App is not installed. You can fetch cookie data after user install your App, and let user continue to do something that he want do in Web Page.
                        DESC
 
   s.homepage         = 'https://github.com/mkoosun/SafariCookieBridge'
