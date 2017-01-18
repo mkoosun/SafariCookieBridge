@@ -1,0 +1,66 @@
+<html>
+<head>
+	<script type="text/javascript">
+
+	function setCookie(name,value)
+	{
+		var Days = 365;
+		var exp = new Date();
+		exp.setTime(exp.getTime() + Days*10*24*60*60*1000);
+		document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+	}
+
+	function getCookie(name)
+	{
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		if(arr=document.cookie.match(reg))
+			return unescape(arr[2]);
+		else
+			return null;
+	}
+
+	function delCookie(name)
+	{
+		var exp = new Date();
+		exp.setTime(exp.getTime() - 1);
+		var cval=getCookie(name);
+		if(cval!=null)
+		document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+	}
+
+	function getQueryString(name) { 
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+		var r = window.location.search.substr(1).match(reg); 
+		if (r != null) 
+			return unescape(r[2]);
+		return null; 
+	}
+
+	function main() {
+
+		var actionType = getQueryString("action");
+		var name = getQueryString("name");
+		var scheme = getQueryString("scheme");
+		var value = getQueryString("value");
+		var qid = getQueryString("qid");
+
+		if(actionType == "get") {
+			var cookie = getCookie(name);
+			var url = scheme + "://sendcookie?" + escape(name) + "=" + escape(cookie) + "&qid=" + qid;
+			window.location.href = url;
+		} else if(actionType == "set") {
+			setCookie(name, value);
+			var url = scheme + "://setcookie?qid=" + qid;
+			window.location.href = url;
+		}
+	}
+
+	main();
+
+	</script>
+</head>
+
+<body>
+	<p>v0.0.1</p>
+</body>
+</html>
