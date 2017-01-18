@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SafariCookieBridge_Example' do
+  pod 'SafariCookieBridge', :path => '../'
+
+  target 'SafariCookieBridge_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

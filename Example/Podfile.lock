@@ -1,0 +1,16 @@
+PODS:
+  - SafariCookieBridge (0.1.0)
+
+DEPENDENCIES:
+  - SafariCookieBridge (from `../`)
+
+EXTERNAL SOURCES:
+  SafariCookieBridge:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SafariCookieBridge: 5010df05e4c70d6ba61e693ab70c389338d098d1
+
+PODFILE CHECKSUM: be1c4b66f24cfc06a38f512b92bcfeed9832ba1c
+
+COCOAPODS: 1.1.1
