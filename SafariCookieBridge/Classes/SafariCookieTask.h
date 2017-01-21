@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <SafariServices/SFSafariViewController.h>
 
 typedef void(^SafariCookieBlock)(BOOL success, NSString *value);

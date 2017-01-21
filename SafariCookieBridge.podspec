@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SafariCookieBridge'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Get and Set data via Safari Cookie'
 
   s.description      = <<-DESC
@@ -15,5 +15,6 @@ SafariCookieBridge can get data from Safari's Cookie, and also set data to Cooki
 
   s.ios.deployment_target = '7.0'
 
+  s.frameworks = 'UIKit'
   s.source_files = 'SafariCookieBridge/Classes/**/*'
 end
