@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
     
-    [SafariCookieBridge setCookieWithName:@"userid" value:@"testValue" scheme:@"myScheme" url:@"https://mkoosun.github.com/mkoosun/SafariCookieBridge/cookie.html" timeout:30 block:^(BOOL success, NSString *value) {
+    [SafariCookieBridge setCookieWithName:@"userid" value:@"testValue" scheme:@"myScheme" url:@"https://mkoosun.github.com/mkoosun/SafariCookieBridge/cookie.html" viewController:self timeout:30 block:^(BOOL success, NSString *value) {
         
         if(success)
             NSLog(@"Set cookie success");
@@ -30,7 +30,7 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [SafariCookieBridge getCookieWithName:@"userid" scheme:@"myScheme" url:@"https://mkoosun.github.com/mkoosun/SafariCookieBridge/cookie.html" timeout:10 block:^(BOOL success, NSString *value) {
+        [SafariCookieBridge getCookieWithName:@"userid" scheme:@"myScheme" url:@"https://mkoosun.github.com/mkoosun/SafariCookieBridge/cookie.html" viewController:self timeout:10 block:^(BOOL success, NSString *value) {
             
             if(success && value) {
                 NSLog(@"Get cookie userid = %@", value);

@@ -24,7 +24,18 @@
     safari.view.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-1, [UIScreen mainScreen].bounds.size.height-1, 1, 1);
     safari.view.backgroundColor = [UIColor greenColor];
     
-    _hostVc = [KKUtil getCurrentVC];
+    if(_hostVc == nil) {
+        _hostVc = [KKUtil getCurrentVC];
+    }
+    
+    if(_hostVc == nil) {
+        if(self.block) {
+            self.block(NO, nil);
+            self.block = nil;
+        }
+        return;
+    }
+    
     [_hostVc addChildViewController:safari];
     [safari didMoveToParentViewController:_hostVc];
     [_hostVc.view insertSubview:safari.view atIndex:0];

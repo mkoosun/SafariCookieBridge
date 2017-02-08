@@ -42,13 +42,15 @@
     return NO;
 }
 
-+ (void) getCookieWithName:(NSString*)name scheme:(NSString*)scheme url:(NSString*)url timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block {
++ (void) getCookieWithName:(NSString*)name scheme:(NSString*)scheme url:(NSString*)url viewController:(UIViewController*)viewController timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block {
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
+        block(NO, nil);
         return;
     }
     
     if(!name || !scheme || !url) {
+        block(NO, nil);
         return;
     }
     
@@ -60,6 +62,7 @@
     task.queneId = [@(bridge.taskCount ++) stringValue];
     task.scheme = scheme;
     task.name = name;
+    task.hostVc = viewController;
     if(timeout>0)
         task.timeout = timeout;
     else
@@ -75,7 +78,7 @@
     [task performSelector:@selector(start) withObject:nil afterDelay:0.1];
 }
 
-+ (void) setCookieWithName:(NSString*)name value:(NSString*)value scheme:(NSString*)scheme url:(NSString*)url timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block {
++ (void) setCookieWithName:(NSString*)name value:(NSString*)value scheme:(NSString*)scheme url:(NSString*)url viewController:(UIViewController*)viewController timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block {
 
     if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9.0) {
         return;
@@ -93,6 +96,7 @@
     task.queneId = [@(bridge.taskCount ++) stringValue];
     task.scheme = scheme;
     task.name = name;
+    task.hostVc = viewController;
     if(timeout>0)
         task.timeout = timeout;
     else

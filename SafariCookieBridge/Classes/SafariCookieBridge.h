@@ -19,8 +19,8 @@
 //Should by called in AppDelegate.m `+ (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options`
 + (BOOL) openURL:(NSURL *)url;
 
-+ (void) getCookieWithName:(NSString*)name scheme:(NSString*)scheme url:(NSString*)url timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block;
++ (void) getCookieWithName:(NSString*)name scheme:(NSString*)scheme url:(NSString*)url viewController:(UIViewController*)viewController timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block;
 
-+ (void) setCookieWithName:(NSString*)name value:(NSString*)value scheme:(NSString*)scheme url:(NSString*)url timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block;
++ (void) setCookieWithName:(NSString*)name value:(NSString*)value scheme:(NSString*)scheme url:(NSString*)url viewController:(UIViewController*)viewController timeout:(NSTimeInterval)timeout block:(SafariCookieBlock)block;
 
 @end
