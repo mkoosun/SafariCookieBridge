@@ -29,7 +29,7 @@ pod "SafariCookieBridge"
 
 ### Set Cookie
 ```
-[SafariCookieBridge setCookieWithName:@"userid" value:@"testValue" scheme:@"myScheme" url:@"http://yourserver.com/cookie.html" timeout:30 block:^(BOOL success, NSString *value) {
+[SafariCookieBridge setCookieWithName:@"userid" value:@"testValue" scheme:@"myScheme" url:@"http://yourserver.com/cookie.html" viewController:myVc timeout:30 block:^(BOOL success, NSString *value) {
    
     if(success)
         NSLog(@"Set cookie success");
@@ -41,7 +41,7 @@ pod "SafariCookieBridge"
 
 ### Get Cookie
 ```
-[SafariCookieBridge getCookieWithName:@"userid" scheme:@"myScheme" url:@"http://yourserver.com/cookie.html" timeout:10 block:^(BOOL success, NSString *value) {
+[SafariCookieBridge getCookieWithName:@"userid" scheme:@"myScheme" url:@"http://yourserver.com/cookie.html" viewController:myVc timeout:10 block:^(BOOL success, NSString *value) {
     
     if(success && value) {
         NSLog(@"Get cookie userid = %@", value);
